@@ -1,0 +1,4 @@
+config.version = 1
+config.cxx = cl /MD
+config.cxx.std = 17
+config.cc.coptions = /O2 /DNDEBUG

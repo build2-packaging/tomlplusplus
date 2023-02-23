@@ -1,0 +1,17 @@
+: 1
+name: libtoml++
+version: 3.3.0-a.0.z
+project: tomlplusplus
+summary: Header-only TOML config file parser and serializer for C++17.
+license: MIT
+description-file: README.md
+url: https://marzer.github.io/tomlplusplus/
+src-url: https://github.com/marzer/tomlplusplus
+doc-url: https://marzer.github.io/tomlplusplus/annotated.html
+package-url: https://github.com/build2-packaging/tomlplusplus
+package-email: packaging@build2.org ; Mailing list.
+builds: default
+requires: C++17
+
+depends: * build2 >= 0.15.0
+depends: * bpkg >= 0.15.0

@@ -1,0 +1,14 @@
+import impl_libs = libtoml++%lib{toml++}
+
+example_files = cxx{*}
+
+for example: $example_files
+{
+    example_name = ($name($example))_example
+    exe{$example_name}: $example hxx{examples}
+    exe{$example_name}: $impl_libs
+    ./: exe{$example_name}
+}
+
+exe{error_printer_example}: test = true
+exe{toml_generator_example}: test = true
