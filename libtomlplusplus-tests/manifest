@@ -1,8 +1,8 @@
 : 1
-name: libtomlplusplus
+name: libtomlplusplus-tests
 version: 3.3.0-a.0.z
 project: tomlplusplus
-summary: Header-only TOML config file parser and serializer for C++17.
+summary: Tests for the toml++ library.
 license: MIT
 description-file: README.md
 url: https://marzer.github.io/tomlplusplus/
@@ -12,7 +12,7 @@ package-url: https://github.com/build2-packaging/tomlplusplus
 package-email: packaging@build2.org ; Mailing list.
 builds: default
 requires: C++17
-tests: libtomlplusplus-tests
 
 depends: * build2 >= 0.15.0
 depends: * bpkg >= 0.15.0
+depends: catch2 ^3.0.0

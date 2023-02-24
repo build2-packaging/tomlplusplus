@@ -1,0 +1,8 @@
+import impl_libs = libtomlplusplus%lib{tomlplusplus}
+import impl_libs += catch2%lib{catch2}
+
+cxx.poptions += -DUSE_VENDORED_LIBS=false
+
+exe{tomlplusplus_tests}: {cxx hxx}{*}
+exe{tomlplusplus_tests}: $impl_libs
+

@@ -1,0 +1,7 @@
+project = libtomlplusplus-tests
+
+using version
+using config
+using test
+using install
+using dist

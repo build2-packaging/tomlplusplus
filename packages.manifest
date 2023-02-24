@@ -1,2 +1,4 @@
 : 1
 location: libtomlplusplus/
+:
+location: libtomlplusplus-tests/
