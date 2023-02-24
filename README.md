@@ -11,17 +11,19 @@ The packaging code is licensed under the MIT License, the upstream artifacts are
 You can simply add this package as dependency to your project by specifying it in your `manifest`:
 
 ```
-depends: libtoml++ ^1.0.0
+depends: libtomlplusplus ^3.3.0
 ```
 
 Then import your required targets
 
 ```
-import libs = libtoml++%lib{toml++}
+import libs = libtomlplusplus++%lib{tomlplusplus++}
 ```
 
-This library offers a big range of options (though the default values are reasonable), so have a look at the official [upstream code](https://github.com/nanomsg/nng) and the [root.build](libnng/build/root.build).
+By the default the library is compiled and uses exceptions. You cange this behaviour by specifying the configs explicilty:
 
-## Issues
+```
+libtomlplusplus.config.use_header_only = true
+libtomlplusplus.config.use_exceptions = false
+```
 
-* no TLS support: wolfssl and/or mbedtls need to be available as packages first
