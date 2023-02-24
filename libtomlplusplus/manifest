@@ -1,5 +1,5 @@
 : 1
-name: libtoml++
+name: libtomlplusplus
 version: 3.3.0-a.0.z
 project: tomlplusplus
 summary: Header-only TOML config file parser and serializer for C++17.

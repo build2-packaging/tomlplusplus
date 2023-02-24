@@ -1,4 +1,4 @@
-import impl_libs = libtoml++%lib{toml++}
+import impl_libs = libtomlplusplus%lib{tomlplusplus}
 
 example_files = cxx{*}
 

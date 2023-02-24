@@ -1,17 +1,17 @@
 
-lib{toml++}: {hxx ixx}{**}
+lib{tomlplusplus}: {hxx ixx}{**}
 
 out_pfx_inc = [dir_path] $out_root/include/
 src_pfx_inc = [dir_path] $src_root/include/
 
 export_poptions =
 
-if $config.libtoml__.use_exceptions
+if $config.libtomlplusplus.use_exceptions
 {
     export_poptions += -DTOML_EXCEPTIONS
 }
 
-lib{toml++}:
+lib{tomlplusplus}:
 {
   cxx.export.poptions = "-I$out_pfx_inc" "-I$src_pfx_inc" $export_poptions
 }
@@ -20,9 +20,9 @@ lib{toml++}:
 # in place of another pre-release or the final version. See the version module
 # for details on the version.* variable values.
 if $version.pre_release
-  lib{toml++}: bin.lib.version = "-$version.project_id"
+  lib{tomlplusplus}: bin.lib.version = "-$version.project_id"
 else
-  lib{toml++}: bin.lib.version = "-$version.major.$version.minor"
+  lib{tomlplusplus}: bin.lib.version = "-$version.major.$version.minor"
 
 {hxx ixx}{*}:
 {

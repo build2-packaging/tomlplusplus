@@ -1,4 +1,4 @@
-project = libtoml++
+project = libtomlplusplus
 
 using version
 using config

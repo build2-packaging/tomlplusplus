@@ -11,4 +11,4 @@ hxx{*}: cxx.importable = true
 # The test target for cross-testing (running tests under Wine, etc).
 test.target = $cxx.target
 
-config [bool] config.libtoml__.use_exceptions ?= true
+config [bool] config.libtomlplusplus.use_exceptions ?= true
