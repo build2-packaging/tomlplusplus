@@ -4,6 +4,7 @@ using cxx
 
 hxx{*}: extension = h
 ixx{*}: extension = inl
+cxx{*}: extension = cpp
 
 # Assume headers are importable unless stated otherwise.
 hxx{*}: cxx.importable = true
@@ -12,3 +13,4 @@ hxx{*}: cxx.importable = true
 test.target = $cxx.target
 
 config [bool] config.libtomlplusplus.use_exceptions ?= true
+config [bool] config.libtomlplusplus.use_header_only ?= false

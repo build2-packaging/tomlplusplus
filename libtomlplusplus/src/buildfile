@@ -1,0 +1,46 @@
+# Public headers.
+pub = [dir_path] ../include/
+
+include $pub
+
+pub_hdrs = $($pub/ pub_hdrs)
+
+lib{tomlplusplus}: $pub/{$pub_hdrs}
+lib{tomlplusplus}: cxx{toml}: include = (!$config.libtomlplusplus.use_header_only)
+
+if $config.libtomlplusplus.use_exceptions
+    export_poptions += -DTOML_EXCEPTIONS=1
+else
+    export_poptions += -DTOML_EXCEPTIONS=0
+
+if $config.libtomlplusplus.use_header_only
+    export_poptions += -DTOML_HEADER_ONLY=1
+else
+    export_poptions += -DTOML_HEADER_ONLY=0
+
+# Build options.
+out_pfx_inc = [dir_path] $out_root/include/
+src_pfx_inc = [dir_path] $src_root/include/
+
+cxx.poptions =+ "-I$out_pfx_inc" "-I$src_pfx_inc" $export_poptions
+
+{hbmis objs}{*}: cxx.poptions += -DTOML_SHARED_LIB=1
+
+# Export options.
+lib{tomlplusplus}:
+{
+    cxx.export.poptions = "-I$out_pfx_inc" "-I$src_pfx_inc" $export_poptions
+}
+
+libs{tomlplusplus}: cxx.export.poptions += -DTOML_SHARED_LIB=1
+
+# For pre-releases use the complete version to make sure they cannot be used
+# in place of another pre-release or the final version. See the version module
+# for details on the version.* variable values.
+if $version.pre_release
+    lib{tomlplusplus}: bin.lib.version = "-$version.project_id"
+else
+    lib{tomlplusplus}: bin.lib.version = "-$version.major.$version.minor"
+
+# Don't install private headers.
+{hxx ixx txx}{*}: install = false

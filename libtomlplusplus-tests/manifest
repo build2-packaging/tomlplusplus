@@ -15,4 +15,4 @@ requires: C++17
 
 depends: * build2 >= 0.15.0
 depends: * bpkg >= 0.15.0
-depends: catch2 ^3.0.0
+depends: catch2 ^2.0.0
