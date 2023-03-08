@@ -23,7 +23,7 @@ import libs = libtomlplusplus++%lib{tomlplusplus++}
 By the default the library is compiled and uses exceptions. You cange this behaviour by specifying the configs explicilty:
 
 ```
-libtomlplusplus.config.use_header_only = true
-libtomlplusplus.config.use_exceptions = false
+config.libtomlplusplus.use_header_only = true
+config.libtomlplusplus.use_exceptions = false
 ```
 
