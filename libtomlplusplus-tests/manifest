@@ -1,6 +1,6 @@
 : 1
 name: libtomlplusplus-tests
-version: 3.3.0-a.0.z
+version: 3.3.0
 project: tomlplusplus
 summary: Tests for the toml++ library.
 license: MIT
