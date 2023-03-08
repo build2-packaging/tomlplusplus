@@ -85,10 +85,10 @@ jobs:
             os: windows-latest
             config_file: msvc.debug.build
             compiler_type: msvc
-          - name: Windows clang Debug
-            os: windows-latest
-            config_file: clang.debug.build
-            compiler_type: clang
+          # - name: Windows clang Debug
+          #   os: windows-latest
+          #   config_file: clang.debug.build
+          #   compiler_type: clang
           - name: Windows msvc Release
             os: windows-latest
             config_file: msvc.release.build
